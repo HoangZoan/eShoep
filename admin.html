@@ -13,5 +13,46 @@
       <a href="./cart.html">Giỏ hàng</a>
       <a class="active" href="#">Admin</a>
     </nav>
+
+    <main>
+      <form class="add-product-form" novalidate>
+        <div class="form-control">
+          <label for="title">Tên sản phẩm:</label>
+
+          <div class="input-wrapper">
+            <input type="text" name="title" id="title" />
+            <p class="error hidden">Thông tin không được để trống</p>
+          </div>
+        </div>
+        <div class="form-control">
+          <label for="imageUrl">Hình ảnh:</label>
+
+          <div class="input-wrapper">
+            <input type="text" name="imageUrl" id="imageUrl" />
+            <p class="error hidden">Thông tin không được để trống</p>
+          </div>
+        </div>
+        <div class="form-control">
+          <label for="price">Giá:</label>
+
+          <div class="input-wrapper">
+            <input type="number" name="price" id="price" />
+            <p class="error hidden">Thông tin không được để trống</p>
+          </div>
+        </div>
+        <div class="form-control">
+          <label for="description">Mô tả:</label>
+
+          <div class="input-wrapper">
+            <textarea name="description" id="description" rows="6"></textarea>
+            <p class="error hidden">Thông tin không được để trống</p>
+          </div>
+        </div>
+
+        <button class="btn-primary" type="submit">Đăng sản phẩm</button>
+      </form>
+    </main>
+
+    <script src="./admin.js"></script>
   </body>
 </html>

@@ -1,32 +1,7 @@
 "use strict";
 
-const products = [
-  {
-    id: "p-1",
-    imageUrl:
-      "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/475e8817-2f2c-4c1d-993c-a8f678168142/nikecourt-vapor-lite-hard-court-tennis-shoes-rkl5kR.png",
-    title: "NikeCourt Vapor Lite",
-    price: 1000000,
-    description: "This is a very good pair of Nike shoes",
-  },
-  {
-    id: "p-2",
-    imageUrl:
-      "https://salt.tikicdn.com/cache/750x750/ts/product/35/f6/e5/74d77bef5efe83c559e3b1a2888109da.jpg.webp",
-    title: "SKECHERS",
-    price: 1190000,
-    description: "Giày sneakers nam Elite Flex Prime 232212-LGBK",
-  },
-  {
-    id: "p-3",
-    imageUrl:
-      "https://salt.tikicdn.com/cache/750x750/ts/product/01/0c/36/a1efbce047d9451d2b3418dbaa00f6e1.jpg.webp",
-    title: "OEM ",
-    price: 1190000,
-    description:
-      "Giày Nam, Giày Thể Thao Nam Cổ Thấp Phong Cách Hiện Đại, Phù Hợp Đi Học, Đi Chơi QA - 405",
-  },
-];
+const localProducts = localStorage.getItem("products");
+const products = JSON.parse(localProducts);
 
 const productsListEl = document.querySelector(".products-list");
 
