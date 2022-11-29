@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Sản Phẩm</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="header-nav">
+      <a class="active" href="./index.html">Sản phẩm</a>
+      <a href="./cart.html">Giỏ hàng</a>
+      <a href="./admin.html">Admin</a>
+    </nav>
+
+    <main>
+      <h2 class="product-detail-title text-center"></h2>
+
+      <div class="product-detail-container">
+        <div class="product-image">
+          <!-- <img
+            src="https://media.cnn.com/api/v1/images/stellar/prod/allbirds-sneakers-review-tree-runnerjpg.jpg?c=16x9&q=h_270,w_480,c_fill"
+            alt=""
+          /> -->
+        </div>
+
+        <div class="product-detail-content">
+          <div class="product-detail-price-text">
+            <b>Price:</b>
+            <span class="product-detail-price"></span>
+          </div>
+          <div>
+            <b>Description:</b>
+            <span class="product-detail-description"></span>
+          </div>
+
+          <div class="product-detail-quantity">
+            <button class="btn-secondary decrement">-</button>
+            <span class="product-detail-quantity-number">1</span>
+            <button class="btn-secondary increment">+</button>
+          </div>
+
+          <div class="btn-primary">Thêm vào giỏ</div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./product-detail.js"></script>
+  </body>
+</html>

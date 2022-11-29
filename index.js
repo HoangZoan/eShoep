@@ -13,6 +13,7 @@ const generateProductsMarkup = (productsData) => {
     const imageUrl = productsData[i].imageUrl;
     const title = productsData[i].title;
     const price = productsData[i].price;
+    const id = productsData[i].id;
 
     const markup = `
             <li>
@@ -24,10 +25,15 @@ const generateProductsMarkup = (productsData) => {
                 </div>
 
                 <div class="product-info">
-                    <b>${title}</b>
+                    <a href="./product-detail.html#${id}" target="_blank">
+                      <b>${title}</b>
+                    </a>
                     <b>Price: ${price}</b>
 
-                    <button class="btn-primary">Thêm vào giỏ</button>
+                    <div class="card-action">
+                      <button class="btn-primary">Thêm vào giỏ</button>
+                      <button class="btn-danger btn-delete" data-product-id="${id}">Xóa</button>
+                    </div>
                 </div>
             </li>
         `;
@@ -63,3 +69,19 @@ const generateProductsMarkup = (productsData) => {
 // };
 
 productsListEl.innerHTML = generateProductsMarkup(products);
+
+// LOGIC XÓA SẢN PHẨM
+productsListEl.addEventListener("click", (event) => {
+  const deleteButton = event.target.closest(".btn-delete");
+  if (!deleteButton) return;
+
+  // BAT DAU TU DAY...
+  const prodId = deleteButton.dataset.productId;
+  const newProductsList = products.filter(({ id }) => {
+    return id !== prodId;
+  });
+  const newProductsListJson = JSON.stringify(newProductsList);
+
+  localStorage.setItem("products", newProductsListJson);
+  location.reload();
+});
