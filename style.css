@@ -21,6 +21,12 @@ main {
   margin-top: 72px;
 }
 
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .text-center {
   text-align: center;
 }
@@ -63,6 +69,22 @@ main {
 
 .btn-primary:hover {
   background-color: #a971c0;
+}
+
+.delete-button {
+  width: 24px;
+  height: 24px;
+  font-size: 20px;
+  line-height: 0px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.delete-button:hover {
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .header-nav {
@@ -196,6 +218,7 @@ main {
 
 .product-detail-price-text {
   font-size: 21px;
+  margin-bottom: 24px;
 }
 
 .product-detail-content .btn-primary {
@@ -218,4 +241,101 @@ main {
   display: flex;
   justify-content: space-between;
   margin-top: auto;
+}
+
+.toast-message {
+  padding: 12px 24px;
+  border: 1px solid #9b59b6;
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  border-radius: 9px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.toast-message.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-info {
+  display: flex;
+  gap: 36px;
+}
+
+.product-cart-list {
+  /* background-color: red; */
+  flex: 3;
+}
+
+.product-cart-list li {
+  padding: 8px 0;
+  display: flex;
+  gap: 24px;
+  border: 1px solid #9b59b6;
+  border-left-color: #fff;
+  border-right-color: #fff;
+}
+
+.product-cart-image {
+  aspect-ratio: 1 / 1;
+  width: 20%;
+}
+
+.product-cart-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-cart-text-content {
+  margin-right: auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-cart-list .delete-button {
+  align-self: flex-start;
+}
+
+.receipt {
+  flex: 1.5;
+  border: 1px solid #9b59b6;
+  border-radius: 9px;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.receipt h2 {
+  margin-bottom: 24px;
+}
+
+.receipt-list {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.recepit-total {
+  width: 100%;
+}
+
+.receipt-list li,
+.recepit-total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.receipt-list li {
+  margin-bottom: 6px;
+}
+
+.receipt .btn-primary {
+  margin-top: 36px;
 }

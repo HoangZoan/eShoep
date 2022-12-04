@@ -14,7 +14,7 @@
       <a href="./admin.html">Admin</a>
     </nav>
 
-    <main>
+    <main class="product-description-main">
       <h2 class="product-detail-title text-center"></h2>
 
       <div class="product-detail-container">
@@ -26,13 +26,15 @@
         </div>
 
         <div class="product-detail-content">
-          <div class="product-detail-price-text">
-            <b>Price:</b>
-            <span class="product-detail-price"></span>
-          </div>
-          <div>
-            <b>Description:</b>
-            <span class="product-detail-description"></span>
+          <div class="product-detail-text-content">
+            <!-- <div class="product-detail-price-text">
+              <b>Price:</b>
+              <span class="product-detail-price"></span>
+            </div>
+            <div>
+              <b>Description:</b>
+              <span class="product-detail-description"></span>
+            </div> -->
           </div>
 
           <div class="product-detail-quantity">
@@ -41,11 +43,13 @@
             <button class="btn-secondary increment">+</button>
           </div>
 
-          <div class="btn-primary">Thêm vào giỏ</div>
+          <button class="btn-primary">Thêm vào giỏ</button>
         </div>
       </div>
     </main>
 
-    <script src="./product-detail.js"></script>
+    <div class="toast-message"></div>
+
+    <script src="./product-detail.js" type="module"></script>
   </body>
 </html>

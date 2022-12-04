@@ -1,4 +1,6 @@
 "use strict";
+import { postNewProduct } from "./scripts/api.js";
+import { showToastMessage } from "./scripts/helper.js";
 
 const formEl = document.querySelector(".add-product-form");
 
@@ -40,20 +42,10 @@ formEl.onsubmit = function (event) {
   }
 
   if (formIsValid) {
+    const newProduct = { title, imageUrl, price, description };
+    postNewProduct(newProduct);
     clearErrorMessages();
-
-    const newId = "id-" + Date.now().toString().slice(-5);
-    const newProduct = { id: newId, title, imageUrl, price, description };
-
-    if (!localStorage.getItem("products")) {
-      const productsList = [newProduct];
-      localStorage.setItem("products", JSON.stringify(productsList));
-    } else {
-      const oldListJson = localStorage.getItem("products");
-      const existingList = JSON.parse(oldListJson);
-      existingList.push(newProduct);
-
-      localStorage.setItem("products", JSON.stringify(existingList));
-    }
+    formEl.reset();
+    showToastMessage("Đăng sản phẩm thành công ✅");
   }
 };
